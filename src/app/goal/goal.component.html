@@ -4,15 +4,16 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div *ngFor="let goal of goals; let i = index">
-        <div>
+      <div class="border rounded mb-2" *ngFor="let goal of goals; let i = index">
+        <div class="p-3">
           <h4 id={{i}} appStrikethrough>
             {{ goal.name }} due on {{goal.completeDate | date | uppercase}}
           </h4>
           <button class="btn btn-primary" (click)="toggleDetails(i)">Toggle Details</button>
         </div>
 
-        <div>
+        <div class="p-3">
+          <hr>
           <app-goal-detail
             *ngIf="goal.showDescription"
             [goal]="goal"
@@ -28,4 +29,15 @@
   </div>
 
   <p *ngIf="goals.length > 5">Your goals are too many</p>
+
+  <hr>
+
+  <div class="row">
+    <blockquote class="blockquote text-center">
+      <p class="mb-0">{{quote.quote}}</p>
+      <footer class="blackquote-footer">
+        <cite>{{quote.author}}</cite>
+      </footer>
+    </blockquote>
+  </div>
 </div>
