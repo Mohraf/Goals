@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgProgressModule } from 'ngx-progressbar';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GoalComponent } from './goal/goal.component';
@@ -25,7 +27,8 @@ import { GoalService } from './goal-service/goal.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgProgressModule
   ],
   providers: [GoalService],
   bootstrap: [AppComponent]
